@@ -13,10 +13,18 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
     const book = new Book(title, author, pages, read);
     myLibrary.push(book);
+    displayBooks();
 }
 
 function displayBooks() {
     const libraryContainer = document.querySelector('.library');
+    
+    // Clean up
+    while (libraryContainer.firstChild) {
+        libraryContainer.removeChild(libraryContainer.firstChild);
+    }
+
+    // Add all books into display
     for (const book of myLibrary) {
         // book card container
         const bookCard = document.createElement('div');
@@ -54,11 +62,24 @@ function displayBooks() {
     }
 }
 
+const form = document.querySelector('form');
+const dialog = document.querySelector('dialog')
+form.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    dialog.close();
+
+    const title = event.target[0].value;
+    const author = event.target[1].value;
+    const pages = event.target[2].value;
+    const read = event.target[3].checked;
+    console.log(read)
+
+    addBookToLibrary(title,author,pages,read);
+});
+
 addBookToLibrary('test1', 'tester1', 1, false);
 addBookToLibrary('test2', 'tester2', 2, true);
 addBookToLibrary('test3', 'tester3', 3, false);
 addBookToLibrary('test4', 'tester4', 4, false);
 addBookToLibrary('test5', 'tester5', 5, true);
 addBookToLibrary('test6', 'tester6', 6, true);
-
-displayBooks();
