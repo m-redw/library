@@ -10,6 +10,7 @@ p, h2, h3, h4, h5 {
 .library {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .book-card {
