@@ -9,6 +9,26 @@
 </head>
 <body>
     <h1>My Library</h1>
+
+    <button type="button" class="new-book" command="show-modal" commandfor="add-book">Add Book</button>
+    <dialog id="add-book">
+        <form>
+            <label for="bookTitle">Title</label>
+            <input type="text" id="bookTitle" name="bookTitle">
+
+            <label for="bookAuthor">Author</label>
+            <input type="text" id="bookAuthor" name="bookAuthor">
+
+            <label for="bookPages">Pages</label>
+            <input type="number" id="bookPages" name="bookPages">
+
+            <label for="bookRead">Read?</label>
+            <input type="checkbox" id="bookRead" name="bookRead">
+
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
+
     <div class="library"></div>
 </body>
 </html>
