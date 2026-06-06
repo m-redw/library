@@ -76,10 +76,3 @@ form.addEventListener('submit', (event)=>{
 
     addBookToLibrary(title,author,pages,read);
 });
-
-addBookToLibrary('test1', 'tester1', 1, false);
-addBookToLibrary('test2', 'tester2', 2, true);
-addBookToLibrary('test3', 'tester3', 3, false);
-addBookToLibrary('test4', 'tester4', 4, false);
-addBookToLibrary('test5', 'tester5', 5, true);
-addBookToLibrary('test6', 'tester6', 6, true);
