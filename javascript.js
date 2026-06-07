@@ -52,6 +52,12 @@ function displayBooks() {
         removeButton.textContent = 'Remove';
         changeReadButton.textContent = 'Change Read Status';
         
+        removeButton.addEventListener('click', ()=>{
+            const index = myLibrary.indexOf(book);
+            myLibrary.splice(index, 1);
+            bookCard.remove();
+        });
+
         bookCard.appendChild(title);
         bookCard.appendChild(author);
         bookCard.appendChild(pageCount);
@@ -72,7 +78,6 @@ form.addEventListener('submit', (event)=>{
     const author = event.target[1].value;
     const pages = event.target[2].value;
     const read = event.target[3].checked;
-    console.log(read)
 
     addBookToLibrary(title,author,pages,read);
 });
