@@ -52,10 +52,22 @@ function displayBooks() {
         removeButton.textContent = 'Remove';
         changeReadButton.textContent = 'Change Read Status';
         
+        removeButton.type = 'button';
+        changeReadButton.type = 'button';
         removeButton.addEventListener('click', ()=>{
             const index = myLibrary.indexOf(book);
             myLibrary.splice(index, 1);
             bookCard.remove();
+        });
+        changeReadButton.addEventListener('click', ()=>{
+            book.read = !book.read
+            if (book.read) {
+                readStatus.textContent = 'Read';
+                readStatus.classList.add('book-read');
+            } else {
+                readStatus.textContent = 'Not Read';
+                readStatus.classList.add('book-not-read');
+        }
         });
 
         bookCard.appendChild(title);
