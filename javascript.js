@@ -50,8 +50,10 @@ function displayBooks() {
             readStatus.classList.add('book-not-read');
         }
         removeButton.textContent = 'Remove';
-        changeReadButton.textContent = 'Change Read Status';
-        
+        removeButton.classList.add('remove-button');
+        changeReadButton.textContent = 'Read Status';
+        changeReadButton.classList.add('change-read-button');
+
         removeButton.type = 'button';
         changeReadButton.type = 'button';
         removeButton.addEventListener('click', ()=>{
@@ -63,10 +65,10 @@ function displayBooks() {
             book.read = !book.read
             if (book.read) {
                 readStatus.textContent = 'Read';
-                readStatus.classList.add('book-read');
+                readStatus.classList.replace('book-not-read', 'book-read');
             } else {
                 readStatus.textContent = 'Not Read';
-                readStatus.classList.add('book-not-read');
+                readStatus.classList.replace('book-read', 'book-not-read');
         }
         });
 
